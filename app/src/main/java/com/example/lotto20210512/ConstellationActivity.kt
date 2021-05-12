@@ -1,8 +1,7 @@
-package com.androidapp.lotto20210512
+package com.example.lotto20210512
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.lotto20210512.R
 
 class ConstellationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
