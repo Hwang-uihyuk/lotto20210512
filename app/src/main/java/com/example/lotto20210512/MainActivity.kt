@@ -14,6 +14,13 @@ class MainActivity : AppCompatActivity() {
 
         CnsCardView.setOnClickListener {
             startActivity(Intent(this@MainActivity, ConstellationActivity::class.java))
+
+            val CnsNameView = findViewById<CardView>(R.id.CnsNameView)
+
+            CnsNameView.setOnClickListener{
+                startActivity(Intent(this@MainActivity, NameActivity::class.java))
+            }
+
         }
     }
 
