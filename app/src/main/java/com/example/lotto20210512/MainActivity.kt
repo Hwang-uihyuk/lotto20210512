@@ -10,18 +10,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val CnsCardView = findViewById<CardView>(R.id.CnsCardView)
 
-        CnsCardView.setOnClickListener {
-            startActivity(Intent(this@MainActivity, ConstellationActivity::class.java))
+        val CnsResultView = findViewById<CardView>(R.id.CnsResultView)
 
-            val CnsNameView = findViewById<CardView>(R.id.CnsNameView)
+        CnsResultView.setOnClickListener {
+            startActivity(Intent(this@MainActivity, ResultActivity::class.java))
 
-            CnsNameView.setOnClickListener{
-                startActivity(Intent(this@MainActivity, NameActivity::class.java))
+            val CnsCardView = findViewById<CardView>(R.id.CnsCardView)
+
+            CnsCardView.setOnClickListener {
+                startActivity(Intent(this@MainActivity, ConstellationActivity::class.java))
+
+                val CnsNameView = findViewById<CardView>(R.id.CnsNameView)
+
+                CnsNameView.setOnClickListener {
+                    startActivity(Intent(this@MainActivity, NameActivity::class.java))
+                }
+
             }
-
         }
     }
-
 }
+
