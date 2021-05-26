@@ -9,3 +9,4 @@ class ResultActivity : AppCompatActivity() {
         setContentView(R.layout.activity_result)
     }
 }
+
