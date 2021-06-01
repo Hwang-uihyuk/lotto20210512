@@ -3,14 +3,19 @@ package com.example.lotto20210512
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.TextView
+import java.text.SimpleDateFormat
+import java.util.*
 
 class ResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
 
-        val result = intent.getIntegerArrayListExtra("result") ?: return
+        val result = intent.getIntegerArrayListExtra("result")
+        val strConstellation = intent.getStringExtra("constellation")
 
+        val result_sorted = result?.let{result.sortedBy{it}}
 
 //        println("result is $result")
 //        result.sort()
@@ -19,9 +24,16 @@ class ResultActivity : AppCompatActivity() {
 //      val result_sorted = result?.sortedBy{it}
 //        println("result_sorted is " + result_sorted)
 
-        result?.let {
+
+        strConstellation?.let{
+            val resultLabel = findViewById<TextView>(R.id.resultLable)
+            resultLabel.text = "${strConstellation}의 ${SimpleDateFormat("yyyy년 MM월 dd일").format(Date())}로또번호입니다"
+        }
+       result?.let {
             updateLottoBallImages(result.sortedBy { it })
         }
+
+
 
 
 //        updateLottoBallImages(result_sorted)
